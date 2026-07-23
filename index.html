@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <title>Check Splitter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="plain">
+
+    <div class="theme-switcher">
+        <span class="theme-label">Style:</span>
+        <button type="button" onclick="setTheme('plain')">Plain</button>
+        <button type="button" onclick="setTheme('fine-dining')">Fine Dining</button>
+        <button type="button" onclick="setTheme('princess')">Princess</button>
+    </div>
+
+    <main class="container">
+        <h1>Check Splitter</h1>
+        <p class="subtitle">Split the bill, tax, and tip by what each person ordered.</p>
+
+        <h3>How much was the total bill?</h3>
+        <input type="text" id="total">
+
+        <h3>How much was the tax</h3>
+        <input type="text" id="tax">
+
+        <h3>How much was the tip</h3>
+        <input type="text" id="tip">
+
+        <h3>Add people below (and how much their items were)</h3>
+        <div id="fields-container">
+            <div class="person-row">
+                <input type="text" class="payer-name" placeholder="Name">
+                <input type="text" class="meal-cost" placeholder="Meal cost">
+            </div>
+        </div>
+
+        <div class="actions">
+            <button type="button" onclick="addPayer()">Add Person</button>
+            <button type="button" id="submit">Submit</button>
+        </div>
+
+        <div id="result"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

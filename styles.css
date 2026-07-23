@@ -1,0 +1,277 @@
+/* ---------- Base layout (shared by every theme) ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 32px 16px 64px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 32px 40px 40px;
+    border-radius: 14px;
+}
+
+h1 {
+    margin: 0 0 4px;
+    font-size: 2.4rem;
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    opacity: 0.75;
+    font-size: 0.95rem;
+}
+
+h3 {
+    margin: 22px 0 8px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+}
+
+input:focus {
+    border-color: #64748b;
+}
+
+.person-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+.person-row input {
+    max-width: none;
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #1e293b;
+    color: #fff;
+    transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#result {
+    margin-top: 28px;
+}
+
+#result p {
+    margin: 6px 0;
+    font-size: 1.1rem;
+}
+
+/* ---------- Theme switcher bar ---------- */
+.theme-switcher {
+    max-width: 620px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.theme-label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.theme-switcher button {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* =========================================================
+   PLAIN THEME (default)
+   ========================================================= */
+body[data-theme="plain"] {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body[data-theme="plain"] .container {
+    background: #ffffff;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   FINE DINING THEME — ivory menu, charcoal ink, gold accents
+   ========================================================= */
+body[data-theme="fine-dining"] {
+    background: #2b2724;
+    color: #2e2a26;
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+body[data-theme="fine-dining"] .container {
+    background: #f7f1e6;
+    border: 1px solid #cdb888;
+    box-shadow: 0 0 0 6px #2b2724, 0 0 0 7px #b8942f;
+    text-align: center;
+}
+
+body[data-theme="fine-dining"] h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #7a5c1e;
+}
+
+body[data-theme="fine-dining"] .subtitle {
+    font-style: italic;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #cdb888;
+    padding-bottom: 18px;
+}
+
+body[data-theme="fine-dining"] h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #7a5c1e;
+}
+
+body[data-theme="fine-dining"] input {
+    background: #fffdf8;
+    border: 1px solid #c3ad7c;
+    color: #2e2a26;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.05rem;
+}
+
+body[data-theme="fine-dining"] .person-row,
+body[data-theme="fine-dining"] .actions {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-theme="fine-dining"] button {
+    background: #7a5c1e;
+    color: #f7f1e6;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: inherit;
+    border-radius: 2px;
+}
+
+body[data-theme="fine-dining"] .theme-switcher button {
+    background: #4a423a;
+    color: #f7f1e6;
+    font-family: inherit;
+}
+
+body[data-theme="fine-dining"] #result p {
+    letter-spacing: 1px;
+    color: #4a3a1a;
+}
+
+/* =========================================================
+   PRINCESS THEME — pink, playful, sparkly, cursive
+   ========================================================= */
+body[data-theme="princess"] {
+    background: linear-gradient(160deg, #ffd1ec 0%, #ffe6f4 50%, #fff0f8 100%);
+    color: #7a2a5a;
+    font-family: "Quicksand", system-ui, sans-serif;
+}
+
+body[data-theme="princess"] .container {
+    background: #fff5fb;
+    border: 3px solid #ff8dc7;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.35);
+    text-align: center;
+}
+
+body[data-theme="princess"] h1 {
+    font-family: "Quicksand", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: #ff4fa3;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+body[data-theme="princess"] .subtitle {
+    color: #b85a90;
+}
+
+body[data-theme="princess"] h3 {
+    font-family: "Quicksand", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #e94f9e;
+}
+
+body[data-theme="princess"] input {
+    background: #ffffff;
+    border: 2px solid #ffa9d4;
+    border-radius: 20px;
+    color: #7a2a5a;
+    text-align: center;
+}
+
+body[data-theme="princess"] input:focus {
+    border-color: #ff4fa3;
+}
+
+body[data-theme="princess"] .person-row,
+body[data-theme="princess"] .actions {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body[data-theme="princess"] button {
+    background: linear-gradient(135deg, #ff6fb5, #ff4fa3);
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 79, 163, 0.4);
+}
+
+body[data-theme="princess"] .theme-switcher button {
+    background: #ffd1ec;
+    color: #a83a78;
+    border-radius: 20px;
+}
+
+body[data-theme="princess"] #result p {
+    color: #d43a8a;
+    font-weight: 600;
+}
