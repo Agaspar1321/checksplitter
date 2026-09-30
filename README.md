@@ -6,7 +6,7 @@ Splits a restaurant bill so everyone pays for what they actually ordered.
 
 Enter the tax and tip, then add each person and what their meal cost. Tax and tip are split by each person's share of the food, so whoever ordered the $40 steak covers more of the tip than whoever got the $12 salad.
 
-Rounding every share to the penny can leave the total a cent or two off, so the last person absorbs the difference and the shares always add up to the bill exactly.
+Rounding every share to the penny can leave the total a cent or two off, so the last person absorbs the difference and the shares always add up to the bill exactly. If the bill you typed doesn't match the meals you entered, it flags it.
 
 Three themes: Plain, Fine Dining, and Princess.
 

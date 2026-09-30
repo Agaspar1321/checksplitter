@@ -57,12 +57,11 @@ button.addEventListener("click", () => {
     // 2. clear old results ONCE, before any appends
     result.innerHTML = "";
 
-    // 3. warn if the entered total doesn't match meals + tax + tip
-    const expected = subtotal + tax + tip;
-    if (total > 0 && Math.abs(total - expected) > 0.01) {
+    // 3. warn if the bill (before tax and tip) doesn't match the meals entered
+    if (total > 0 && Math.abs(total - subtotal) > 0.01) {
         const warn = document.createElement("p");
         warn.className = "warning";
-        warn.textContent = `Heads up: your entered total ($${total.toFixed(2)}) doesn't match meals + tax + tip ($${expected.toFixed(2)}).`;
+        warn.textContent = `Heads up: the bill you entered ($${total.toFixed(2)}) doesn't match the meals added up ($${subtotal.toFixed(2)}).`;
         result.appendChild(warn);
     }
 
